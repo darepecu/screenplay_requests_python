@@ -1,0 +1,12 @@
+version: '3'
+services:
+  allure:
+    image: "frankescobar/allure-docker-service"
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 1
+      KEEP_HISTORY: 1
+    ports:
+      - "9988:5050"
+    volumes:
+      - ${PWD}/tmp/allure-results:/app/allure-results
+      - ${PWD}/tmp/allure-report:/app/default-reports
